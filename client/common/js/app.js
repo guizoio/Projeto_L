@@ -57,9 +57,12 @@ app.metodos = {
     post: (url, dados, callbackSuccess, callbackError, login = false) => {
 
         try {
-            if (app.metodos.validaToken(login)) {
+            
 
-                $.ajax({
+
+            if (app.metodos.validaToken(login) || url === '/cadastro') {
+
+                jQuery.ajax({
                     url: url,
                     method: 'POST',
                     contentType: 'application/json; charset=utf-8',

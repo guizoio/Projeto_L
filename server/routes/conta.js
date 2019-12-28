@@ -8,7 +8,7 @@ const Acesso = new UsuarioTokenAcesso();
 
 module.exports = (server) => {
 
-    server.put('/cadastro', Acesso.verificaTokenAcesso, async (req, res, next) => {
+    server.post('/cadastro', async (req, res, next) => {
         const result = await controllerCarga.controllers().inserir(req)
         res.send(result.recordset);
         return next();

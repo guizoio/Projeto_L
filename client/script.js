@@ -1,13 +1,13 @@
-$(document).ready(function() {
-    $('.load').hide();
+jQuery(document).ready(function() {
+    jQuery('.load').hide();
 });
 
 function sleep (time) {
-    $('.load').show();
+    jQuery('.load').show();
     return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-$("#btnCadastrar").on('click', () => {
+jQuery("#btnCadastrar").on('click', () => {
     validaCampos(); 
 });
 
@@ -71,7 +71,7 @@ async function validaCampos(){
 async function adicionar(dados){
     alert("função");
     alert(dados);
-    app.metodos.put('/cadastro', JSON.stringify(dados),
+    app.metodos.post('/cadastro', JSON.stringify(dados),
             (response) => {
                 alert(response);
                 alert("aqui");
