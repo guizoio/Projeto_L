@@ -8,6 +8,9 @@
         <meta name="author" content="Colorlib" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+        <link rel="stylesheet" type="text/css" href="test/css/util.css">
+        <link rel="stylesheet" type="text/css" href="test/css/main.css"> 
+
         <link rel="shortcut icon" href="images/favicon.png" />
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLibre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css"  href='css/clear.css' />
@@ -20,6 +23,20 @@
         <!--[if lt IE 9]>
                 <script src="js/html5.js"></script>
         <![endif]-->
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+        
+	    <!--<link rel="icon" type="image/png" href="test/images/icons/favicon.ico"/>     
+        <link rel="stylesheet" type="text/css" href="test/vendor/bootstrap/css/bootstrap.min.css">  
+        <link rel="stylesheet" type="text/css" href="test/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="test/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+        <link rel="stylesheet" type="text/css" href="test/vendor/animate/animate.css">
+        <link rel="stylesheet" type="text/css" href="test/vendor/css-hamburgers/hamburgers.min.css">
+        <link rel="stylesheet" type="text/css" href="test/vendor/animsition/css/animsition.min.css">
+        <link rel="stylesheet" type="text/css" href="test/vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="test/vendor/daterangepicker/daterangepicker.css"> -->
 
     </head>
 
@@ -111,7 +128,7 @@
 
                     <div class="entry-content">
 
-                        <div>
+                        <!-- <div>
                             <div class="content-wrap content-660 center-relative">
                                 <div class="entry-date published">Login</div>
                                 <input type="text" class="search-field" placeholder="Login para logar no bolão" value="" name="login" id="login">
@@ -145,10 +162,65 @@
                                 <input type="button" class="button" value="CADASTRAR" name="click" id="click" onclick="teste()">
                             </div>
                         </div>
+                        <br><br><br> -->
 
 
 
-                        <br><br><br>
+                        <form class="contact100-form">
+                            <div class="wrap-input100 validate-input">
+                                <span class="label-input100">Login:</span>
+                                <input class="input100" type="text" name="login" id="login" value="" placeholder="Login para logar no bolão">
+                                <span class="focus-input100"></span>
+                            </div>
+                            <div class="wrap-input100 validate-input">
+                                <span class="label-input100">Senha:</span>
+                                <input class="input100" type="password" name="senha" id="senha" placeholder="Senha para logar no bolão">
+                                <span class="focus-input100"></span>
+                            </div>
+                            <div class="wrap-input100 validate-input">
+                                <span class="label-input100">Nick:</span>
+                                <input class="input100" type="text" name="nick" id="nick" placeholder="Nick do LOL">
+                                <span class="focus-input100"></span>
+                            </div>
+                            <div class="wrap-input100 validate-input">
+                                <span class="label-input100">Nome:</span>
+                                <input class="input100" type="text" name="nome" id="nome" placeholder="Seu nome">
+                                <span class="focus-input100"></span>
+                            </div>
+                            <div class="wrap-input100 validate-input">
+                                <span class="label-input100">E-Mail:</span>
+                                <input class="input100" type="text" name="email" id="email" placeholder="Seu E-mail">
+                                <span class="focus-input100"></span>
+                            </div>
+                            <!-- <div class="wrap-input100 validate-input" data-validate = "Message is required">
+                                <span class="label-input100">Message:</span>
+                                <textarea class="input100" name="message" placeholder="Your Comment..."></textarea>
+                                <span class="focus-input100"></span>
+                            </div> -->
+                            <!-- <div class="container-contact100-form-btn">
+                                <button id="btnCadastrar" class="contact100-form-btn" onclick="teste()">
+                                    <span>
+                                        Cadastrar
+                                        <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </div> -->
+                        </form>
+                        <div class="container-contact100-form-btn">
+                            <button id="btnCadastrar" class="contact100-form-btn" onclick="teste()">
+                                <span>
+                                    Cadastrar
+                                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="load"> 
+                            <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+                            <span class="sr-only">
+                                Loading...
+                            </span> 
+                        </div>
+                        <!-- <br><br><br>
                         <div class="clear"></div>
                         <div class="post-full-width">
                             <script>
@@ -185,14 +257,14 @@
                             <br>
                             <p>Duis iaculis mattis rutrum. Sed iaculis magna sit amet suscipit ornare. Nulla ornare leo a tortor aliquam, quis interdum ex tempor. Quisque ultricies consequat suscipit. Donec tincidunt tempor ornare. Praesent a enim vel augue suscipit auctor in gravida augue. Suspendisse ut libero sit amet augue molestie fringilla. Fusce molestie, velit a finibus eleifend, nibh odio sagittis est, id aliquet turpis orci quis nibh.</p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="clear"></div>
                 </article>
             </div>
         </div>
 
 
-
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <!--Load JavaScript-->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type='text/javascript' src='js/imagesloaded.pkgd.js'></script>
@@ -204,5 +276,22 @@
         <script type='text/javascript' src='js/jquery.easing.1.3.js'></script>
         <script type='text/javascript' src='js/main.js'></script>
         <script type='text/javascript' src='script.js'></script>
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script>
+
+
+
     </body>
 </html>
