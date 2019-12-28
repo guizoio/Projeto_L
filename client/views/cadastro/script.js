@@ -36,7 +36,6 @@ async function validaCampos(){
         controle=2;
     }
     if(controle == 2){
-        alert("CADASTRO");
 
         var dados = {
             login : login,
@@ -47,8 +46,8 @@ async function validaCampos(){
         }
 
         await adicionar(dados);
-        alert("sucesso !!!!!");
-        window.location.assign("index.html"); 
+        alert("Estamos Cadastrando, ok?");
+        window.location.assign("../../index.html"); 
     }
 }
 
@@ -66,18 +65,17 @@ async function adicionar(dados){
                     return;
                 }
                 if (data.resultado == "sucesso") {
-                    alert("certo");
-                    //app.metodos.mensagem(data.msg, 'green');
+                    alert("SUCESSO !!!");
+                    window.location.assign("../../index.html");  
                 }            
             },
             (xhr, ajaxOptions, error) => {
+                alert("ERRO !!!");
                 console.log('xhr', xhr);
                 console.log('ajaxOptions', ajaxOptions);
                 console.log('error', error);
                 app.metodos.mensagem("Falha ao realizar operação. Tente novamenteeee.");
                 return;
             }
-        );
-
-    alert("FIM");
+        );   
 }

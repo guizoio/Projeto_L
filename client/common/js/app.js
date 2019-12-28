@@ -62,7 +62,7 @@ app.metodos = {
 
             if (app.metodos.validaToken(login) || url === '/cadastro') {
 
-                jQuery.ajax({
+                $.ajax({
                     url: url,
                     method: 'POST',
                     contentType: 'application/json; charset=utf-8',
