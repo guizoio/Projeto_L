@@ -7,15 +7,19 @@ function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-function teste(){
+$("#btnCadastrar").on('click', () => {
     validaCampos(); 
-    // sleep(2000).then(() => {
-    //     $(document).ready(function() {
+});
 
-    //     });
-    //     window.location.assign("index.html");   
-    // });
-}
+// function teste(){
+//     validaCampos(); 
+//     // sleep(2000).then(() => {
+//     //     $(document).ready(function() {
+
+//     //     });
+//     //     window.location.assign("index.html");   
+//     // });
+// }
 
 
 async function validaCampos(){
@@ -48,5 +52,41 @@ async function validaCampos(){
 
     if(controle == 0){
         alert("CADASTRO");
+
+        var dados = {
+            login = login,
+            senha = senha,
+            nick = nick,
+            nome = nome,
+            email = email
+        }
+
+        await adicionar(dados);
+
     }
+}
+
+async function adicionar(dados){
+    app.metodos.post('/cadastro', JSON.stringify(dados),
+            (response) => {
+                var data = JSON.parse(response[0].retorno);
+                if (data.resultado == "erro") {
+                    app.metodos.mensagem("Falha ao realizar operação. Tente novamente.");
+                    console.log("Erro interno: ", data.msg);
+                    alert("ERRO");
+                    return;
+                }
+                if (data.resultado == "sucesso") {
+                    alert("certo");
+                    //app.metodos.mensagem(data.msg, 'green');
+                }            
+            },
+            (xhr, ajaxOptions, error) => {
+                console.log('xhr', xhr);
+                console.log('ajaxOptions', ajaxOptions);
+                console.log('error', error);
+                app.metodos.mensagem("Falha ao realizar operação. Tente novamenteeee.");
+                return;
+            }
+        );
 }
