@@ -13,7 +13,7 @@ var config = {
             user: 'sa',
             password: 'Ovodepascoades2',
             server: '172.17.0.2',
-            database: 'ProjetoL',
+            database: 'projeto_l',
             requestTimeout: 180000,
             connectionTimeout: 180000,
             options: { encrypt: false },

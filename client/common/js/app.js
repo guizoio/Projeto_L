@@ -1,25 +1,25 @@
 var app = {};
 
-app.eventos = {
+// app.eventos = {
 
-    init: () => {
+//     init: () => {
 
-        $("#lblUsuarioLogado").text(app.metodos.obterValorSessao('nomeUsuario'));
+//         $("#lblUsuarioLogado").text(app.metodos.obterValorSessao('nomeUsuario'));
 
-        $('body').append("<div class='mask'></div>")
+//         $('body').append("<div class='mask'></div>")
 
-        $(".mask").addClass('animated fadeOut');
+//         $(".mask").addClass('animated fadeOut');
 
-        setTimeout(() => {
-            $(".mask").remove();
-        }, 800);
+//         setTimeout(() => {
+//             $(".mask").remove();
+//         }, 800);
 
-        // valida o menu atual
-        app.metodos.validarMenuAtual();
+//         // valida o menu atual
+//         app.metodos.validarMenuAtual();
 
-    }
+//     }
 
-}
+// }
 
 app.metodos = {
 
@@ -27,14 +27,14 @@ app.metodos = {
     get: (url, callbackSuccess, callbackError) => {
 
         try {
-            if (app.metodos.validaToken()) {
+            //if (app.metodos.validaToken()) {
 
                 $.ajax({
                     url: url,
                     method: 'GET',
                     contentType: 'application/json; charset=utf-8',
                     dataType: "json",
-                    beforeSend: (request) => { request.setRequestHeader("authorization", app.metodos.obterValorSessao('token')); },
+                    //beforeSend: (request) => { request.setRequestHeader("authorization", app.metodos.obterValorSessao('token')); },
                     success: (response) => callbackSuccess(response),
                     error: (xhr, ajaxOptions, error) => {
 
@@ -45,7 +45,7 @@ app.metodos = {
                     }
                 });
 
-            }
+            //}
         }
         catch (ex) {
             return callbackError(null, null, ex);
@@ -55,7 +55,7 @@ app.metodos = {
 
     // centraliza as chamadas de post
     post: (url, dados, callbackSuccess, callbackError, login = false) => {
-        
+
         try {
             if (app.metodos.validaToken(login)) {
 
@@ -86,10 +86,10 @@ app.metodos = {
 
     // centraliza as chamadas de put
     put: (url, dados, callbackSuccess, callbackError) => {
-
+        alert(url);
         try {
             if (app.metodos.validaToken()) {
-
+                alert("PUT");
                 $.ajax({
                     url: url,
                     method: 'PUT',
@@ -117,13 +117,13 @@ app.metodos = {
 
     // método para validar se o token existe. É chamado em todas as requisições internas
     validaToken: (login = false) => {
+        login = true;
+        //var tokenAtual = app.metodos.obterValorSessao('token');
 
-        var tokenAtual = app.metodos.obterValorSessao('token');
-
-        if ((tokenAtual == undefined || tokenAtual == null || tokenAtual == "" || tokenAtual == 'null') && !login) {
-            window.location.href = '/';
-            return false;
-        }
+        // if ((tokenAtual == undefined || tokenAtual == null || tokenAtual == "" || tokenAtual == 'null') && !login) {
+        //     window.location.href = '/';
+        //     return false;
+        // }
 
         return true;
     },

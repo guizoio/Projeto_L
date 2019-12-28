@@ -49,16 +49,18 @@ async function validaCampos(){
         alert("POR GENTILEZA INFORMAR E-MAIL");
         controle = 1;
     }
-
-    if(controle == 0){
+    else{
+        controle=2;
+    }
+    if(controle == 2){
         alert("CADASTRO");
 
         var dados = {
-            login = login,
-            senha = senha,
-            nick = nick,
-            nome = nome,
-            email = email
+            login : login,
+            senha : senha,
+            nick : nick,
+            nome : nome,
+            email : email
         }
 
         await adicionar(dados);
@@ -67,8 +69,13 @@ async function validaCampos(){
 }
 
 async function adicionar(dados){
-    app.metodos.post('/cadastro', JSON.stringify(dados),
+    alert("função");
+    alert(dados);
+    app.metodos.put('/cadastro', JSON.stringify(dados),
             (response) => {
+                alert(response);
+                alert("aqui");
+                console.log(response);
                 var data = JSON.parse(response[0].retorno);
                 if (data.resultado == "erro") {
                     app.metodos.mensagem("Falha ao realizar operação. Tente novamente.");
