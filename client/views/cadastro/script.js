@@ -1,25 +1,8 @@
-jQuery(document).ready(function() {
-    jQuery('.load').hide();
-});
-
-function sleep (time) {
-    jQuery('.load').show();
-    return new Promise((resolve) => setTimeout(resolve, time));
-}
-
-jQuery("#btnCadastrar").on('click', () => {
+jQuery("#btnCadastro").on('click', () => {
     validaCampos(); 
 });
 
-// function teste(){
-//     validaCampos(); 
-//     // sleep(2000).then(() => {
-//     //     $(document).ready(function() {
 
-//     //     });
-//     //     window.location.assign("index.html");   
-//     // });
-// }
 
 
 async function validaCampos(){
@@ -65,9 +48,10 @@ async function validaCampos(){
 
         await adicionar(dados);
         alert("sucesso !!!!!");
-        //window.location.assign("index.html"); 
+        window.location.assign("index.html"); 
     }
 }
+
 
 async function adicionar(dados){
     app.metodos.post
@@ -94,4 +78,6 @@ async function adicionar(dados){
                 return;
             }
         );
+
+    alert("FIM");
 }
