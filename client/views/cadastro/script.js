@@ -1,8 +1,10 @@
-jQuery("#btnCadastro").on('click', () => {
+$("#btnCadastro").on('click', () => {
     validaCampos(); 
 });
 
-
+$("#btnVoltar").on('click', () => {
+    window.location.assign("../../index.html");  
+});
 
 
 async function validaCampos(){
