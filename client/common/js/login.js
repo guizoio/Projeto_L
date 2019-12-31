@@ -65,7 +65,8 @@ login.metodos = {
                 //app.metodos.obterValorSessao('loginUsuario')
                 //window.location.href = '/views/menu/PAGINA_INICIAL.html';
 
-                alert("bom, chegou ate aqui , ");
+                //alert("bom, chegou ate aqui , ");
+                window.location.href = '../MENU/inde.html';
                 
             },
             (xhr, ajaxOptions, error) => {
