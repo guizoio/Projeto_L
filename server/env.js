@@ -13,6 +13,7 @@ var config = {
             user: 'sa',
             password: 'Ovodepascoades2',
             server: '172.17.0.2',
+            //serve: '192.168.0.110,1433',
             database: 'projeto_l',
             requestTimeout: 180000,
             connectionTimeout: 180000,
