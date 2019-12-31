@@ -12,13 +12,8 @@ var config = {
         database: {
             user: 'sa',
             password: 'Ovodepascoades2',
-<<<<<<< HEAD
             server: '172.17.0.2',
             //serve: '192.168.0.110,1433',
-=======
-            //server: '172.17.0.2',
-            server: '192.168.0.110',
->>>>>>> f3d69896fb06217a340d07e11e7e8948025c584a
             database: 'projeto_l',
             requestTimeout: 180000,
             connectionTimeout: 180000,
