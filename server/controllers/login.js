@@ -18,17 +18,24 @@ const controllers = () => {
         if (usuarioBanco.recordset != undefined && usuarioBanco.recordset.length > 0) {
 
             // valida se as senhas são diferentes
-            var hashSenha = crypto.createHmac('sha256', password).digest('hex');
-            console.log("aqui");
-            console.log(hashSenha);
-            console.log(usuarioBanco.recordset[0].Senha);
-            // if (hashSenha != usuarioBanco.recordset[0].Senha) {
-            //     return { "Status": false, "Mensagem": "Senha incorreta" };
-            // }
+            //var hashSenha = crypto.createHmac('sha256', password).digest('hex');
+            //console.log("aqui");
+            //console.log(hashSenha);
+            //console.log(usuarioBanco.recordset[0].Senha);
+             if (password != usuarioBanco.recordset[0].senha) {
+                 return { "Status": false, "Mensagem": "Senha incorreta" };
+             }
 
             // se estiver tudo ok, gera o token e retorna o json
             var tokenAcesso = Acesso.gerarTokenAcesso(req.body.usuario);
-            return { "TokenAcesso": tokenAcesso, "NomeCompleto": usuarioBanco.recordset[0].Nome, "Status": true,"UsuarioAcesso": usuarioBanco.recordset[0].UsuarioAcesso };
+            return { 
+                    "TokenAcesso": tokenAcesso, 
+                    "NomeCompleto": usuarioBanco.recordset[0].Nome, 
+                    "Status": true,
+                    "UsuarioAcesso": usuarioBanco.recordset[0].login, 
+                    "nick": usuarioBanco.recordset[0].nick, 
+                    "email": usuarioBanco.recordset[0].email, 
+                };
 
         }
         else {

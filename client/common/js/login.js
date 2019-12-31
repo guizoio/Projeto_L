@@ -59,8 +59,13 @@ login.metodos = {
                 app.metodos.gravarValorSessao(response.TokenAcesso, 'token');
                 app.metodos.gravarValorSessao(response.NomeCompleto, 'nomeUsuario');
                 app.metodos.gravarValorSessao(response.UsuarioAcesso, 'loginUsuario');
+                app.metodos.gravarValorSessao(response.nick, 'nick');
+                app.metodos.gravarValorSessao(response.email, 'email');
+                 
                 //app.metodos.obterValorSessao('loginUsuario')
-                window.location.href = '/views/menu/PAGINA_INICIAL.html';
+                //window.location.href = '/views/menu/PAGINA_INICIAL.html';
+
+                alert("bom, chegou ate aqui , ");
                 
             },
             (xhr, ajaxOptions, error) => {
